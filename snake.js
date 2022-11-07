@@ -1,9 +1,7 @@
-class Snake{
+class Snake extends LivingCreature{
     constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.energy = 15
-        this.directions = [];
+        super(x, y);
+        this.energy = 8;
     }
     getNewCoordinates() {
         this.directions = [
@@ -18,19 +16,8 @@ class Snake{
         ];
     }
     chooseCell(character) {
-        this.getNewCoordinates()
-        var found = [];
-        for (let i in this.directions) {
-            let x = this.directions[i][0];
-            let y = this.directions[i][1];
-            if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-                if (matrix[y][x] == character) {
-                    found.push(this.directions[i]);
-                }
-            }
-        }
-
-        return found;
+        this.getNewCoordinates();
+        return super.chooseCell(character);
     }
     mul() {
         var emptyCells = this.chooseCell(0);
@@ -81,8 +68,8 @@ class Snake{
                 }
             }
             
-            if(this.energy >= 12) {
-                this.mul()
+            if(this.energy >= 13) {
+                this.mul();
             }
         } else if(newCell1){
             this.energy += 5  

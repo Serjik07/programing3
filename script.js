@@ -50,7 +50,7 @@ function generate(matLen,gr,grEat,pr,th,sn) {
 }
 
 
-let matrix = generate(25,45,8,6,9,3)
+let matrix = generate(15,25,25,6,9,3)
 
 
 var side = 30;

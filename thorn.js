@@ -4,7 +4,7 @@ class Thorn extends LivingCreature{
         let emptyCells = this.chooseCell(0);
         let newCell = random(emptyCells);
 
-        if (newCell && this.multiply >= 20) {
+        if (newCell && this.multiply >= 30) {
             let newX = newCell[0];
             let newY = newCell[1];
             matrix[newY][newX] = 4;
